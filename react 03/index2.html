@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        const app = document.querySelector("#app");
+        const root = ReactDOM.createRoot(app);
+        const elementId = "myId";
+        const content = "hello world";
+        const data = ["pena", "buku", "meja", "penggaris"];
+        const divStyle = {
+            color: "red",
+            fontSize: "20px",
+            background: "grey"
+        };
+        const daftarBarang = [
+            {
+                name: "pena",
+                price: "10000"
+            },
+            {
+                name: "buku",
+                price: "50000"
+            },
+            {
+                name: "meja",
+                price: "35000"
+            },
+            {
+                name: "penggaris",
+                price: "15000"
+            },
+            {
+                name: "kertas A4",
+                price: "35000"
+            },
+            {
+                name: "pencil",
+                price: "5000"
+            }
+
+        ]
+        const a = true;
+        const b = false;
+        const c = 10;
+        const sortedDaftarBarang = daftarBarang.sort((a, b) => parseInt(a.price) - parseInt(b.price));
+        const toTitleCase = (str) => {
+            return str.replace(/\w\S*/g, (txt) => {
+                return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+            });
+        };
+        let header = (
+            <div>
+                <p id={elementId}>{content}</p>
+                <h1 style={divStyle}>hello</h1>
+                <p style={{ textAlign: "left", color: "blue" }}>Paragraf</p>
+                <ul>
+                    {data.map((items) => (
+                        <li>{items}</li>
+                    ))}
+                </ul>
+                <button id="btn" onClick={() => alert("sudah diklik")}>Simpan</button>
+                <ul>
+                    {daftarBarang.map((item) => (
+                        <li key={item.name}>
+                            <label>{item.name}</label>
+                            <label> : </label>
+                            <label>{item.price}</label>
+                        </li>
+                    ))}
+                </ul>
+                {a && <h1>data true</h1>}
+                {b && <h1>data false</h1>}
+                {c > 5 ? <h1>lebih dari 5</h1> : <h1>kurang dari 5</h1>}
+                <table style={{ width: '50%', border: '1px solid black', borderCollapse: 'collapse' }}>
+                    <thead>
+                        <tr>
+                            <th style={{ width: '70%', border: '1px solid black' }}>Name</th>
+                            <th style={{ width: '30%', border: '1px solid black' }}>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        {sortedDaftarBarang.map((item, index) => (
+                            <tr key={index}>
+                                <td style={{ border: '1px solid black' }}>{toTitleCase(item.name)}</td>
+                                <td style={{ border: '1px solid black' }}>{item.price}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+        )
+        root.render(header); 
+    </script>
+</body>
+
+</html>

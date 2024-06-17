@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        const app = document.querySelector("#app");
+        const root = ReactDOM.createRoot(app);
+        let header=(
+            <div>
+                {new Date().toDateString()}
+                <br/>
+                <form>
+                    <label htmlFor="name">nama :</label>
+                    <input type="text" id="name"/><br/>
+                    <label htmlFor="pendidikan">pendidikan :</label>
+                    <select name="pendidikan" id="pendidikan" value="1">
+                        <option value="1">SMA/SMK</option>
+                        <option value="2">Diploma</option>
+                        <option value="3">Sarjana</option>
+                    </select>
+
+                </form>
+            </div>
+        )
+        root.render(header); 
+    </script>
+</body>
+
+</html>

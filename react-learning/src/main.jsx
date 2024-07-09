@@ -8,6 +8,7 @@ import Counter from './component/Counter.jsx'
 import CounterPojok from './component/CounterPojok.jsx'
 import EmployeeComponent from './component/Employee.jsx'
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
@@ -19,6 +20,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Counter/>
     <CounterPojok/>
     <EmployeeComponent/>
-
   </React.StrictMode>,
 )

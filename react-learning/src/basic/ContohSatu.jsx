@@ -11,7 +11,7 @@ function Buton() {
     return (
         <div>
             <button onClick={handleClick}>
-                Klik Saya
+                Klik Saya contoh satu
             </button>
             <p>jumlah klik {clicks}</p>
         </div>
